@@ -1,4 +1,4 @@
-# <u>Groupe 4</u> : Saintenoy Tom, Heniart Loan, .., ..
+# <u>Groupe 4</u> : Saintenoy Tom, Heniart Loan, Mimoun Younes, Jeobran Kombou
 
 ## Préparer son environnement
 
@@ -22,13 +22,12 @@ Si sur windows vous ne pouvez exécuter le script en .ps1, ouvrer un powershelle
 
 Installer les paquets
 
-> pip install -r requirements.txt
 > pip install fastapi locust pytest uvicorn coverage httpx pytest-mock pytest-profiling pylint sqlalchemy
 
 ## Démarrer l'application
 > uvicorn main:app
 > --reload # pour développer (recharge automatique l'application à chaque changement d'un fichier)
-Exécuter dans le dossier application
+Exécuter dans le dossier racine
 
 ## Pytest
 > python -m pytest
@@ -43,4 +42,4 @@ Exécuter à la racine du dossier
 > locust --config=.locust.conf
 
 ## Pylint
-> pylint application/ tests/
+> pylint app/ tests/
