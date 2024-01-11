@@ -1,3 +1,7 @@
+"""
+ Test unitaire mock
+"""
+
 from fastapi.testclient import TestClient
 from main import app
 
@@ -83,6 +87,3 @@ def test_get_pokemon(mocker):
     response = client.get("/pokemons")
     assert response.status_code == 200
     assert len(response.json()) == 2
-
-
-
