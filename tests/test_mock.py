@@ -21,7 +21,8 @@ def test_create_trainer(mocker):
     )
     response = client.post("/trainers/", json={"name": "Tom", "birthdate": "1990-11-04"})
     assert response.status_code == 200
-    assert response.json() == {"name": "Tom", "birthdate": "1990-11-04", "id": 1, "inventory": [], "pokemons": []}
+    assert (response.json() ==
+            {"name": "Tom", "birthdate": "1990-11-04", "id": 1, "inventory": [], "pokemons": []})
 
 
 def test_get_items(mocker):
@@ -64,21 +65,24 @@ def test_get_trainers(mocker):
 def test_get_pokemon(mocker):
     mocker.patch("app.actions.get_pokemons",
                  return_value=[
-                         {
-                             "api_id": 150,
-                             "custom_name": "test",
-                             "id": 1,
-                             "name": "mewtwo",
-                             "trainer_id": 1
-                         },
-                         {
-                             "api_id": 56,
-                             "custom_name": "test2",
-                             "id": 2,
-                             "name": "mankey",
-                             "trainer_id": 2
-                         }
-                     ])
+                     {
+                         "api_id": 150,
+                         "custom_name": "test",
+                         "id": 1,
+                         "name": "mewtwo",
+                         "trainer_id": 1
+                     },
+                     {
+                         "api_id": 56,
+                         "custom_name": "test2",
+                         "id": 2,
+                         "name": "mankey",
+                         "trainer_id": 2
+                     }
+                 ])
     response = client.get("/pokemons")
     assert response.status_code == 200
     assert len(response.json()) == 2
+
+
+

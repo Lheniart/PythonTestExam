@@ -38,12 +38,6 @@ class Trainer(Base):
         """
         return len(self.pokemons)
 
-    def add_item_to_inventory(self, item):
-        """
-        Add an item to the trainer's inventory.
-        """
-        self.inventory.append(item)
-
 
 class Pokemon(Base):
     """
@@ -71,9 +65,9 @@ class Pokemon(Base):
 
     def to_dict(self):
         """
-                Converts the Pokemon instance to a dictionary.
-                Returns:
-                    dict: A dictionary representation of the Pokemon.
+        Converts the Pokemon instance to a dictionary.
+        Returns:
+            dict: A dictionary representation of the Pokemon.
         """
         return {
             "id": self.id,
