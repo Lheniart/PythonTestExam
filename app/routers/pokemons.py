@@ -30,7 +30,7 @@ Fonctions :
         Retourne :
             - dict : Résultat de la bataille sous forme de dictionnaire.
             {"pokemonApiID": pokemonApiID, "result": resultValue:int}
-            (None en cas d'égalité).
+            (Draw en cas d'égalité).
 
     - pokemons_random() -> List[dict]:
         Endpoint GET pour obtenir 3 pokémons choisis aléatoirement.
@@ -66,7 +66,7 @@ def pokemons_battle(pokemon_api_id_1: int, pokemon_api_id_2: int):
             pokemonID (int): id of the first pokemon
             pokemonID2 (int): id of the second pokemon
         Return result
-            {"pokemonApiID": pokemonApiID, "result": resultValue:int} (None if draw)
+            {"pokemonApiID": pokemonApiID, "result": resultValue:int} (Draw if draw)
     """
     return battle_pokemon(pokemon_api_id_1, pokemon_api_id_2)
 
